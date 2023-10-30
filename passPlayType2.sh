@@ -10,6 +10,7 @@
 #	      so I committed it as a separate work. :P
 #
 #history  : 2023/10/29 first commit...Under construction  
+#	  : 2023/10/30 add. #targetFile view
 
 #----- initial settings -----
 target=$1
@@ -23,3 +24,12 @@ echo "fullpath : $fullpath"
 #get filename with extension
 filename=$(echo $fullpath | cut -d / -f 6)
 echo "filename : $filename"
+
+#get target directory
+targetDirectory=$(echo $fullpath | sed "s/\/$filename//")
+echo "targetDirectory : $targetDirectory"
+
+#----- display function part -----
+#targetFile view
+cd $targetDirectory 
+less -iNM $filename
