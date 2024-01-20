@@ -1,0 +1,1 @@
+再開したいフォルダをフルパスで記載する。(Enter the full path of the folder you want to restart.)
