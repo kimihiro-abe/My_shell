@@ -6,7 +6,6 @@
 #memo		: Format from csv and output to text
 #memo		: Preparations such as putting multiple columns of entries into one cell.
 #memo		: CSVファイルを一度メモ帳に読ませ、UTF-8で保存し直したものをシェルに読み込ませることで、出力ファイルの文字化けを防ぐことが出来る。
-#ディレクトリ内にある、全xmlファイル内のyearの箇所を置換する
 
 #line=$(iconv -f SHIFT-JIS -t UTF-8 $1)
 line=$1
