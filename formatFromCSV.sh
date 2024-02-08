@@ -6,6 +6,7 @@
 #memo		: Format from csv and output to text
 #memo		: Preparations such as putting multiple columns of entries into one cell.
 #memo		: CSVファイルを一度メモ帳に読ませ、UTF-8で保存し直したものをシェルに読み込ませることで、出力ファイルの文字化けを防ぐことが出来る。
+#ディレクトリ内にある、全xmlファイル内のyearの箇所を置換する
 
 #line=$(iconv -f SHIFT-JIS -t UTF-8 $1)
 line=$1
@@ -13,7 +14,8 @@ touch $2
 
 while read line
 do
-	#echo $line
+	#一行を「,」で分割し、分割した項目数の幾つ目かを指定することで、目的の文字列を抜き出す
+	#cut -d 区切り文字 -f 項目数
 	col1=$(echo ${line} | cut -d , -f 1)
 	col2=$(echo ${line} | cut -d , -f 2)
 	col3=$(echo ${line} | cut -d , -f 3)
